@@ -1,0 +1,253 @@
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 24px;
+  align-items: start;
+}
+
+/* Terminal card */
+.terminal {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  padding: 0;
+  overflow: hidden;
+}
+
+.terminalHeader {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 16px;
+  border-bottom: 1px solid var(--border-default);
+  background: var(--bg-hover);
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  opacity: 0.8;
+}
+
+.terminalTitle {
+  margin-left: 8px;
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.terminalBody {
+  padding: 20px;
+  line-height: 1.8;
+}
+
+.termLine {
+  color: var(--text-secondary);
+}
+
+.prompt {
+  color: var(--accent-cyan);
+  user-select: none;
+}
+
+.cmd {
+  color: var(--text-primary);
+}
+
+.termDivider {
+  height: 1px;
+  background: var(--border-default);
+  margin: 16px 0;
+}
+
+.outputSuccess {
+  color: var(--green-active);
+  padding-left: 16px;
+}
+
+.outputError {
+  color: #f85149;
+  padding-left: 16px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.errorLink {
+  color: var(--accent-primary);
+  text-decoration: underline;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font: inherit;
+  padding: 0;
+}
+
+.errorLink:hover {
+  opacity: 0.8;
+}
+
+.termInput,
+.termTextarea {
+  background: var(--bg-surface);
+  border: 1px solid transparent;
+  border-radius: 0;
+  padding: 6px 10px;
+  margin-left: 16px;
+  margin-bottom: 8px;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--text-primary);
+  transition: border-color 200ms ease;
+  width: calc(100% - 16px);
+  resize: none;
+}
+
+.termInput:disabled,
+.termTextarea:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.termInput::placeholder,
+.termTextarea::placeholder {
+  color: var(--text-muted);
+}
+
+.termInput:focus,
+.termTextarea:focus {
+  outline: none;
+  border-color: var(--accent-primary);
+  background: var(--bg-hover);
+}
+
+.termInputError {
+  border-color: #f85149;
+  background: rgba(248,81,73,0.06);
+}
+
+.honeypot {
+  position: absolute;
+  left: -9999px;
+  opacity: 0;
+  height: 0;
+  width: 0;
+}
+
+.sendBtn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  width: 100%;
+  padding: 10px 16px;
+  background: var(--bg-hover);
+  border: 1px solid var(--border-default);
+  color: var(--text-primary);
+  font-family: var(--font-mono);
+  font-size: 13px;
+  cursor: pointer;
+  transition: background 150ms ease, border-color 150ms ease;
+}
+
+.sendBtn:hover:not(:disabled) {
+  background: var(--border-default);
+  border-color: var(--accent-primary);
+}
+
+.sendBtn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Info card */
+.infoCard {
+  font-family: var(--font-mono);
+  font-size: 13px;
+}
+
+.infoBody {
+  padding: 20px;
+  line-height: 1.8;
+}
+
+.infoItem {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 12px;
+}
+
+.infoKey {
+  color: var(--text-muted);
+  font-size: 11px;
+}
+
+.infoValue {
+  color: var(--text-secondary);
+  font-size: 13px;
+  transition: color 150ms ease;
+  text-decoration: none;
+  word-break: break-all;
+}
+
+.infoValue:hover {
+  color: var(--accent-primary);
+}
+
+.statusRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.statusDot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--green-active);
+  animation: pulse 2s infinite;
+  flex-shrink: 0;
+}
+
+.statusText {
+  color: var(--green-active);
+  font-size: 13px;
+}
+
+.replyNote {
+  font-size: 12px;
+  color: var(--text-muted);
+  font-family: var(--font-sans);
+  line-height: 1.5;
+  margin-top: 12px;
+}
+
+.outputPwd {
+  color: var(--text-secondary);
+  padding-left: 16px;
+  margin-bottom: 12px;
+  font-size: 13px;
+}
+
+.okPrefix {
+  color: var(--green-active);
+  font-weight: 600;
+}
+
+.formHint {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-muted);
+  opacity: 0.5;
+  text-align: center;
+  margin-top: 12px;
+  padding: 0 20px 12px;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@media (max-width: 860px) {
+  .grid { grid-template-columns: 1fr; }
+}

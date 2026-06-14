@@ -1,0 +1,259 @@
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 120px 0 80px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Boot sequence overlay */
+.bootOverlay {
+  position: absolute;
+  inset: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  cursor: pointer;
+}
+
+.bootTerminal {
+  width: 100%;
+  max-width: 420px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-muted);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+}
+
+.bootHeader {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--border-default);
+  background: var(--bg-hover);
+}
+
+.bootDot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  opacity: 0.8;
+}
+
+.bootTitle {
+  margin-left: 8px;
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.bootBody {
+  padding: 20px;
+  line-height: 1.8;
+}
+
+.bootLine {
+  margin-bottom: 4px;
+}
+
+.bootPrompt {
+  color: var(--accent-cyan);
+  user-select: none;
+}
+
+.bootCmd {
+  color: var(--text-primary);
+}
+
+.bootOutput {
+  color: var(--text-secondary);
+  padding-left: 16px;
+  opacity: 0;
+  transform: translateY(4px);
+  transition: opacity 200ms ease, transform 200ms ease;
+}
+
+.bootVisible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.bootReady {
+  color: var(--green-active);
+  margin-top: 4px;
+}
+
+.bootCursor {
+  animation: blink 1s step-end infinite;
+}
+
+.bootHint {
+  font-size: 11px;
+  color: var(--text-muted);
+  text-align: center;
+  margin-top: 12px;
+  opacity: 0.5;
+}
+
+/* Hide content during boot */
+.contentHidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Green glow orb */
+.orb {
+  position: absolute;
+  top: -120px;
+  right: -80px;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(34,197,94,0.10) 0%, transparent 70%);
+  pointer-events: none;
+  border-radius: 50%;
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+  max-width: 760px;
+}
+
+/* Fade-in animation for hero children */
+.fadeItem {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 600ms cubic-bezier(0.16,1,0.3,1) var(--delay),
+              transform 600ms cubic-bezier(0.16,1,0.3,1) var(--delay);
+}
+
+.loaded .fadeItem {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Terminal line */
+.terminal {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  margin-bottom: 28px;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  flex-wrap: wrap;
+}
+
+.prompt {
+  color: var(--text-muted);
+}
+
+.cmd {
+  color: var(--accent-cyan);
+}
+
+.typewriter {
+  color: var(--text-primary);
+  min-width: 2ch;
+}
+
+.cursor {
+  color: var(--accent-cyan);
+  animation: blink 1s step-end infinite;
+  margin-left: 1px;
+}
+
+/* Headline */
+.headline {
+  font-size: clamp(36px, 6vw, 68px);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+  margin-bottom: 24px;
+}
+
+.accent {
+  background: linear-gradient(135deg, var(--accent-primary), var(--accent-cyan));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Subtitle */
+.subtitle {
+  font-size: clamp(15px, 2vw, 18px);
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 40px;
+  max-width: 520px;
+}
+
+/* CTAs */
+.ctas {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 64px;
+  flex-wrap: wrap;
+}
+
+/* Ticker */
+.tickerWrap {
+  overflow: hidden;
+  border-top: 1px solid var(--border-default);
+  padding-top: 24px;
+  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+
+.tickerTrack {
+  display: flex;
+  gap: 0;
+  width: max-content;
+  animation: ticker 36s linear infinite;
+}
+
+.tickerTrack:hover {
+  animation-play-state: paused;
+}
+
+.tickerItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 20px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--text-muted);
+  white-space: nowrap;
+  transition: color var(--transition-fast);
+}
+
+.tickerItem:hover {
+  color: var(--text-secondary);
+}
+
+.tickerDot {
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: var(--border-emphasis);
+  flex-shrink: 0;
+}
+
+@media (max-width: 600px) {
+  .hero {
+    padding: 100px 0 60px;
+  }
+  .orb {
+    width: 300px;
+    height: 300px;
+    right: -60px;
+  }
+}

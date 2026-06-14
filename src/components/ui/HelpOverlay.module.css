@@ -1,0 +1,173 @@
+/* Floating help button */
+.fab {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 90;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-default);
+  border-radius: 20px;
+  color: var(--text-secondary);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.fab:hover {
+  border-color: var(--accent-primary);
+  color: var(--accent-primary);
+  background: var(--bg-hover);
+}
+
+.fabPrompt {
+  color: var(--accent-cyan);
+}
+
+.fabText {
+  color: var(--text-secondary);
+}
+
+/* Overlay */
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: rgba(0,0,0,0.8);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.terminal {
+  width: 100%;
+  max-width: 480px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-muted);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  animation: fadeUp 200ms ease forwards;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--border-default);
+  background: var(--bg-hover);
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  opacity: 0.8;
+}
+
+.title {
+  margin-left: 8px;
+  font-size: 12px;
+  color: var(--text-muted);
+  flex: 1;
+}
+
+.closeBtn {
+  background: none;
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-sm);
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  padding: 2px 8px;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.closeBtn:hover {
+  color: var(--text-primary);
+  border-color: var(--border-muted);
+}
+
+.body {
+  padding: 20px;
+}
+
+.line {
+  margin-bottom: 4px;
+}
+
+.prompt {
+  color: var(--accent-cyan);
+  user-select: none;
+}
+
+.cmd {
+  color: var(--text-primary);
+}
+
+.output {
+  color: var(--text-secondary);
+  padding-left: 16px;
+  margin-bottom: 12px;
+}
+
+.divider {
+  height: 1px;
+  background: var(--border-default);
+  margin: 8px 0;
+}
+
+.cmdBtn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  width: 100%;
+  padding: 8px 12px;
+  background: none;
+  border: none;
+  border-radius: var(--radius-sm);
+  color: var(--text-secondary);
+  font-family: var(--font-mono);
+  font-size: 13px;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  text-align: left;
+}
+
+.cmdBtn:hover {
+  background: var(--bg-hover);
+  color: var(--text-primary);
+}
+
+.cmdName {
+  color: var(--text-muted);
+}
+
+.cmdNameHighlight {
+  color: var(--accent-primary);
+}
+
+.cmdArrow {
+  color: var(--text-muted);
+  margin: 0 4px;
+}
+
+.cmdDesc {
+  color: var(--text-secondary);
+}
+
+.hint {
+  font-size: 11px;
+  color: var(--text-muted);
+  text-align: center;
+  margin-top: 4px;
+}
