@@ -28,7 +28,7 @@ export default function Hero() {
   useEffect(() => {
     const el = heroRef.current
     if (!el) return
-    setTimeout(() => el.classList.add(styles.loaded), done ? 50 : 2000)
+    setTimeout(() => el.classList.add(styles.loaded), done ? 50 : 4000)
   }, [done])
 
   const scrollToProjects = (e) => {

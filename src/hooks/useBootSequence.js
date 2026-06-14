@@ -2,11 +2,11 @@ import { useState, useEffect } from 'react'
 
 const STEPS = [
   { msg: 'Loading profile...', delay: 0 },
-  { msg: '✓ Full Stack Developer', delay: 300 },
-  { msg: '✓ AI Integration Builder', delay: 600 },
-  { msg: '✓ Open Source Contributor', delay: 900 },
-  { msg: '✓ Hackathon Winner', delay: 1200 },
-  { msg: 'System Ready.', delay: 1600 },
+  { msg: '✓ Full Stack Developer', delay: 500 },
+  { msg: '✓ AI Integration Builder', delay: 1000 },
+  { msg: '✓ Open Source Contributor', delay: 1700 },
+  { msg: '✓ Hackathon Winner', delay: 2500 },
+  { msg: 'System Ready.', delay: 3400 },
 ]
 
 const STORAGE_KEY = 'portfolio_booted'
