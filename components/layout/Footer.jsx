@@ -13,13 +13,29 @@ export default function Footer() {
           </span>
         </div>
         <div className={styles.right}>
-          <a href={personalInfo.github} target="_blank" rel="noopener noreferrer" className={styles.link}>
+          <a
+            href={personalInfo.github}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.link}
+            aria-label="Paul Bryton Raj GitHub Profile"
+          >
             GitHub
           </a>
-          <a href={personalInfo.linkedin} target="_blank" rel="noopener noreferrer" className={styles.link}>
+          <a
+            href={personalInfo.linkedin}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.link}
+            aria-label="Paul Bryton Raj LinkedIn Profile"
+          >
             LinkedIn
           </a>
-          <a href={`mailto:${personalInfo.email}`} className={styles.link}>
+          <a
+            href={`mailto:${personalInfo.email}`}
+            className={styles.link}
+            aria-label="Send Email to Paul Bryton Raj"
+          >
             Email
           </a>
         </div>

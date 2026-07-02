@@ -100,13 +100,13 @@ export default function Hero() {
 
         {/* CTAs */}
         <div className={`${styles.ctas} ${styles.fadeItem}`} style={{ '--delay': '360ms' }}>
-          <a href="#projects" className="btn btn-primary" onClick={scrollToProjects}>
+          <a href="#projects" className="btn btn-primary" onClick={scrollToProjects} aria-label="Scroll to Projects section">
             ./projects
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
               <path d="M12 5v14M5 12l7 7 7-7"/>
             </svg>
           </a>
-          <a href={personalInfo.github} target="_blank" rel="noopener noreferrer" className="btn btn-ghost">
+          <a href={personalInfo.github} target="_blank" rel="noopener noreferrer" className="btn btn-ghost" aria-label="Visit Paul's GitHub Profile">
             git clone profile
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/>

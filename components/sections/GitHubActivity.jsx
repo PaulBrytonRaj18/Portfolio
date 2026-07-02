@@ -202,7 +202,7 @@ export default function GitHubActivity() {
   useEffect(() => {
     const username = 'PaulBrytonRaj18'
     const headers = {}
-    const token = import.meta.env.VITE_GITHUB_TOKEN
+    const token = process.env.NEXT_PUBLIC_GITHUB_TOKEN || process.env.VITE_GITHUB_TOKEN
     if (token) headers.Authorization = `token ${token}`
 
     async function fetchData() {
@@ -422,8 +422,8 @@ export default function GitHubActivity() {
         {error && (
           <p className={styles.fallbackNote}>
             GitHub API error: {error}. Using generated pattern as fallback.{' '}
-            {!import.meta.env.VITE_GITHUB_TOKEN && (
-              <>Set <code className={styles.codeToken}>VITE_GITHUB_TOKEN</code> in .env for live data.</>
+            {!(process.env.NEXT_PUBLIC_GITHUB_TOKEN || process.env.VITE_GITHUB_TOKEN) && (
+              <>Set <code className={styles.codeToken}>NEXT_PUBLIC_GITHUB_TOKEN</code> in .env for live data.</>
             )}
           </p>
         )}

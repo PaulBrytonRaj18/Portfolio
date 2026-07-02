@@ -31,7 +31,7 @@ export default function Navbar() {
     <header className={`${styles.navbar} ${scrolled ? styles.scrolled : ''}`}>
       <div className={`container ${styles.inner}`}>
         {/* Logo */}
-        <a href="#hero" className={styles.logo} onClick={(e) => handleNavClick(e, '#hero')}>
+        <a href="#hero" className={styles.logo} onClick={(e) => handleNavClick(e, '#hero')} aria-label="Paul Bryton Raj - Home page">
           <span className={styles.logoPrompt}>~</span>
           <span className={styles.logoSlash}>/</span>
           <span className={styles.logoText}>Paul</span>
@@ -47,6 +47,7 @@ export default function Navbar() {
               href={link.href}
               className={styles.navLink}
               onClick={(e) => handleNavClick(e, link.href)}
+              aria-label={`Go to ${link.path} section`}
             >
               <span className={styles.navPrompt}>$ cd </span>
               <span className={styles.navPath}>{link.path}</span>
@@ -64,6 +65,7 @@ export default function Navbar() {
             href="#contact"
             className="btn btn-primary btn-sm"
             onClick={(e) => handleNavClick(e, '#contact')}
+            aria-label="Contact Paul Bryton Raj"
           >
             ./contact
           </a>
@@ -90,6 +92,7 @@ export default function Navbar() {
               href={link.href}
               className={styles.mobileLink}
               onClick={(e) => handleNavClick(e, link.href)}
+              aria-label={`Go to ${link.path} section`}
             >
               <span className={styles.mobilePrompt}>~/</span>
               <span className={styles.mobilePath}>{link.path}</span>
@@ -99,6 +102,7 @@ export default function Navbar() {
             href="#contact"
             className={styles.mobileContact}
             onClick={(e) => handleNavClick(e, '#contact')}
+            aria-label="Contact Paul Bryton Raj"
           >
             <span className={styles.mobilePrompt}>$ </span>
             ./contact
