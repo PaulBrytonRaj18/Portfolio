@@ -6,7 +6,12 @@ node_modules/
 # Build
 dist/
 build/
+.next/
 *.tsbuildinfo
+
+# Project Files
+github-integration-audit-report.txt
+migration_plan.md
 
 # Environment
 .env

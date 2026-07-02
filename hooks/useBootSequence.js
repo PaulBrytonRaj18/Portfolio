@@ -13,7 +13,9 @@ const STORAGE_KEY = 'portfolio_booted'
 
 export function useBootSequence() {
   const [step, setStep] = useState(-1)
-  const [done, setDone] = useState(() => sessionStorage.getItem(STORAGE_KEY) === '1')
+  const [done, setDone] = useState(() => 
+    typeof window !== 'undefined' && sessionStorage.getItem(STORAGE_KEY) === '1'
+  )
 
   useEffect(() => {
     if (done) {
@@ -27,7 +29,7 @@ export function useBootSequence() {
 
     const finish = setTimeout(() => {
       setDone(true)
-      sessionStorage.setItem(STORAGE_KEY, '1')
+      if (typeof window !== 'undefined') sessionStorage.setItem(STORAGE_KEY, '1')
     }, STEPS[STEPS.length - 1].delay + 400)
 
     return () => {
@@ -39,7 +41,7 @@ export function useBootSequence() {
   const skip = () => {
     setStep(STEPS.length)
     setDone(true)
-    sessionStorage.setItem(STORAGE_KEY, '1')
+    if (typeof window !== 'undefined') sessionStorage.setItem(STORAGE_KEY, '1')
   }
 
   return { step, total: STEPS.length, done, skip }

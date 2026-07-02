@@ -1,3 +1,4 @@
+"use client";
 import { useScrollReveal } from '../../hooks/useScrollReveal.js'
 import { testimonials } from '../../data/index.js'
 import styles from './Testimonials.module.css'

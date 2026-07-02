@@ -1,3 +1,4 @@
+"use client";
 import { useEffect, useRef } from 'react'
 import { useTypewriter } from '../../hooks/useTypewriter.js'
 import { useBootSequence } from '../../hooks/useBootSequence.js'

@@ -1,3 +1,4 @@
+"use client";
 import { useState } from 'react'
 import { useScrollReveal } from '../../hooks/useScrollReveal.js'
 import { projects } from '../../data/index.js'

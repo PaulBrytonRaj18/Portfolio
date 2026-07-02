@@ -1,3 +1,4 @@
+"use client";
 import { useState, useRef } from 'react'
 import { useScrollReveal } from '../../hooks/useScrollReveal.js'
 import { personalInfo } from '../../data/index.js'

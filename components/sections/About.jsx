@@ -1,3 +1,4 @@
+"use client";
 import { useScrollReveal } from '../../hooks/useScrollReveal.js'
 import { personalInfo, achievements } from '../../data/index.js'
 import styles from './About.module.css'

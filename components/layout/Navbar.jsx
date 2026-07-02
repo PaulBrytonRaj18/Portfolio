@@ -1,3 +1,4 @@
+"use client";
 import { useState, useEffect } from 'react'
 import { personalInfo } from '../../data/index.js'
 import styles from './Navbar.module.css'

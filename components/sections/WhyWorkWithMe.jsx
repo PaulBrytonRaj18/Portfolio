@@ -1,3 +1,4 @@
+"use client";
 import { useScrollReveal } from '../../hooks/useScrollReveal.js'
 import styles from './WhyWorkWithMe.module.css'
 

@@ -1,3 +1,4 @@
+"use client";
 import { useScrollReveal } from '../../hooks/useScrollReveal.js'
 import { services } from '../../data/index.js'
 import styles from './Services.module.css'
