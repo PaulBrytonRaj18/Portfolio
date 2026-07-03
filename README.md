@@ -37,16 +37,16 @@ Create a `.env` file in the project root:
 
 ```env
 # GitHub personal access token (no scopes needed) — enables live contribution data
-VITE_GITHUB_TOKEN=ghp_your_token_here
+NEXT_PUBLIC_GITHUB_TOKEN=ghp_your_token_here
 
 # StaticForms endpoint and API key — enables the contact form
-VITE_FORM_ENDPOINT=https://api.staticforms.dev/submit
-VITE_STATICFORMS_KEY=sf_your_key_here
+NEXT_PUBLIC_FORM_ENDPOINT=https://api.staticforms.dev/submit
+NEXT_PUBLIC_STATICFORMS_KEY=sf_your_key_here
 ```
 
-If `VITE_GITHUB_TOKEN` is not set, the contribution heatmap falls back to the Events API (last ~90 days) with a seeded pattern fill for older weeks.
+If `NEXT_PUBLIC_GITHUB_TOKEN` is not set, the contribution heatmap falls back to the Events API (last ~90 days) with a seeded pattern fill for older weeks.
 
-If `VITE_FORM_ENDPOINT` is not set, the contact form falls back to a `mailto:` link.
+If `NEXT_PUBLIC_FORM_ENDPOINT` is not set, the contact form falls back to a `mailto:` link.
 
 ## Project Structure
 

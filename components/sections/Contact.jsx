@@ -49,7 +49,7 @@ export default function Contact() {
 
     setStatus('sending')
 
-    const endpoint = process.env.NEXT_PUBLIC_FORM_ENDPOINT || process.env.VITE_FORM_ENDPOINT
+    const endpoint = process.env.NEXT_PUBLIC_FORM_ENDPOINT
 
     if (!endpoint) {
       const subject = encodeURIComponent('Portfolio inquiry from ' + form.name)
@@ -68,7 +68,7 @@ export default function Contact() {
           name: form.name,
           email: form.email,
           message: form.message,
-          apiKey: process.env.NEXT_PUBLIC_STATICFORMS_KEY || process.env.VITE_STATICFORMS_KEY,
+          apiKey: process.env.NEXT_PUBLIC_STATICFORMS_KEY,
           replyTo: form.email,
         }),
       })
